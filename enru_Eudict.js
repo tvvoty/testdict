@@ -76,11 +76,8 @@ class escn_Eudict {
         }
 
         let audios = [];
-        try {
-            audios[0] = 'https://api.frdic.com/api/v2/speech/speakweb?' + headsection.querySelector('.voice-js').dataset.rel;
-        } catch (err) {
-            audios = [];
-        }
+            audios[0] = `https://dict.youdao.com/dictvoice?audio=${encodeURIComponent(word)}&type=1`;
+            audios[1] = `https://dict.youdao.com/dictvoice?audio=${encodeURIComponent(word)}&type=2`;
 
         let content = doc.querySelector('#ExpFCChild') || '';
         if (!content) return [];
