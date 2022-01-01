@@ -50,7 +50,7 @@ class enfr_Cambridge {
     async findCambridge(word) {
         if (!word) return null;
 
-        let base = 'https://dictionary.cambridge.org/search/english-russian/direct/?q=';
+        let base = 'https://dictionary.cambridge.org/search/english-french/direct/?q=';
         let url = base + encodeURIComponent(word);
         let doc = '';
         try {
