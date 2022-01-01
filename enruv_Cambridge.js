@@ -103,8 +103,8 @@ class encn_Cambridge {
                             for (const [index, examp] of examps.entries()) {
                                 if (index > this.maxexample - 1) break; // to control only 2 example sentence.
                                 let eng_examp = T(examp.querySelector('.eg'));
-                                let chn_examp = T(examp.querySelector('.trans'));
-                                definition += `<li class='sent'><span class='eng_sent'>${eng_examp.replace(RegExp(expression, 'gi'),`<b>${expression}</b>`)}</span><span class='chn_sent'>${chn_examp}</span></li>`;
+                                let rus_examp = T(examp.querySelector('.trans'));
+                                definition += `<li class='sent'><span class='eng_sent'>${eng_examp.replace(RegExp(expression, 'gi'),`<b>${expression}</b>`)}</span><span class='rus_sent'>${rus_examp}</span></li>`;
                             }
                             definition += '</ul>';
                         }
@@ -172,7 +172,7 @@ class encn_Cambridge {
                     def = def.replace(pos, '');
                 }
                 pos = pos ? `<span class="pos simple">${pos}</span>`:'';
-                definition += `<li class="ec">${pos}<span class="ec_chn">${def}</span></li>`;
+                definition += `<li class="ec">${pos}<span class="ec_rus">${def}</span></li>`;
             }
             definition += '</ul>';
             let css = `
@@ -229,11 +229,11 @@ class encn_Cambridge {
                 span.pos  {text-transform:lowercase; font-size:0.9em; margin-right:5px; padding:2px 4px; color:white; background-color:#0d47a1; border-radius:3px;}
                 span.tran {margin:0; padding:0;}
                 span.eng_tran {margin-right:3px; padding:0;}
-                span.chn_tran {color:#0d47a1;}
+                span.rus_tran {color:#0d47a1;}
                 ul.sents {font-size:0.8em; list-style:square inside; margin:3px 0;padding:5px;background:rgba(13,71,161,0.1); border-radius:5px;}
                 li.sent  {margin:0; padding:0;}
                 span.eng_sent {margin-right:5px;}
-                span.chn_sent {color:#0d47a1;}
+                span.rus_sent {color:#0d47a1;}
             </style>`;
         return css;
     }
